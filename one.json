@@ -1,0 +1,14 @@
+{
+    "Inna": {
+        "name": "Inna",
+        "age": "31",
+        "department": "Frontend dev",
+        "car": "tesla"
+    },
+    "Anton": {
+        "name": "Anton",
+        "age": "33",
+        "department": "backend dev",
+        "car": "bmw"
+    }
+}
