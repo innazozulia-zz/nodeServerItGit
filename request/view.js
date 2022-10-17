@@ -1,11 +1,64 @@
+const { application } = require("express");
 const express = require("express");
 //express app
 const app = express();
 //registter view engine
 app.set("view engine", "ejs");
+//connect mongoose for work with DB
+const mongoose = require("mongoose");
+//export schema for db
+const Blog = require("./models/blog");
+
+//declare connect to database mongo db
+const db =
+  "mongodb+srv://user:12345678qwe@nodejsblog.cnrchxj.mongodb.net/nodejsBlog?retryWrites=true&w=majority";
+mongoose
+  .connect(db)
+  .then((result) => app.listen(3001))
+  .catch((err) => console.log(err));
+
+//middleware
+var morgan = require("morgan");
 
 //listen for requests
-app.listen(3001);
+// app.listen(3001);
+
+//middleware for static files
+app.use(express.static("public"));
+//morgen middleware
+app.use(morgan("dev"));
+
+// mongoose and mongo sandbox routs
+app.get("/add-blog", (req, res) => {
+  const blog = new Blog({
+    title: "new blog",
+    snippet: "about",
+    body: "more about my new blog",
+  });
+  // blog.save().then((result) => {});
+  blog
+    .save()
+    .then((result) => {
+      res.send(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+// native middleware check
+// app.use((req, res, next) => {
+//   console.log("new request made :");
+//   console.log("host: ", req.hostname);
+//   console.log("path:", req.path);
+//   console.log("method:", req.method);
+//   next();
+// });
+// app.use((req, res, next) => {
+//   console.log("in the next middleware");
+
+//   next();
+// });
 
 app.get("/", (req, res) => {
   const blogs = [
