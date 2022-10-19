@@ -1,90 +1,134 @@
-   body {
-       max-width: 1220px;
-       margin: 0 auto;
-       padding: 0 20px;
-   }
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-   p,
-   h1,
-   h2,
-   h3,
-   a,
-   ul {
-       margin: 0;
-       padding: 0;
-       text-decoration: none;
-       color: #4f5154;
-   }
+body {
+    font-family: 'Poppins', sans-serif;
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 0 20px;
+    margin-top: 30px;
+}
 
-   nav {
-       display: flex;
-       justify-content: space-between;
-       margin-bottom: 60px;
-       padding-bottom: 10px;
-       border-bottom: 1px solid #ddd;
-       text-transform: uppercase;
-   }
+p,
+h1,
+h2,
+h3,
+a,
+ul {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: #4f5154;
+}
 
-   nav ul {
-       display: flex;
-       justify-content: space-between;
-       align-items: flex-end;
-   }
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    text-transform: uppercase;
+}
 
-   nav li {
-       list-style-type: none;
-       margin-left: 20px;
-   }
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
 
-   nav h1 {
-       font-size: 1em;
-   }
+nav li {
+    list-style-type: none;
+    margin-left: 20px;
+}
 
-   nav p,
-   nav a {
-       color: rgb(77, 77, 77);
-       font-weight: 200;
-   }
+nav h1 {
+    font-size: 1em;
+}
 
-   footer {
-       color: #777;
-       text-align: center;
-       margin: 80px auto 20px;
-   }
+nav p,
+nav a {
+    color: rgb(77, 77, 77);
+    font-weight: 200;
+}
 
-   .content {
-       margin-left: 20px;
-       max-width: 500px;
-   }
+footer {
+    color: #777;
+    text-align: center;
+    margin: 80px auto 20px;
+}
 
-   .title {
-       font-size: 20px;
-       color: #404040;
-   }
+.content {
+    margin-left: 20px;
+    max-width: 500px;
+}
 
-   .create-blog form {
-       max-width: 244px;
-       margin: 0 auto;
+.title {
+    font-size: 20px;
+    color: #404040;
+}
 
-   }
+.create-blog form {
+    flex-direction: column;
+    display: flex;
+    max-width: 260px;
+    margin: 0 auto;
 
-   .snippet {
-       margin-bottom: 20px;
-   }
+}
 
-   input,
-   textarea {
-       margin-bottom: 20px;
-       border-radius: 10px;
-   }
+.snippet {
+    margin-bottom: 20px;
+}
 
-   .create-blog button {
-       margin-top: 20px;
-       background: crimson;
-       color: white;
-       border: 0;
-       border-radius: 10px;
-       padding: 6px;
-       cursor: pointer;
-       font-size: 20px;
-   }
+input {
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+textarea {
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.create-blog button {
+    margin-top: 20px;
+    background: crimson;
+    color: white;
+    border: 0;
+    border-radius: 10px;
+    padding: 6px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.blogs__title {
+    margin: 20px 0;
+    color: black;
+}
+
+.blogs a {
+    display: block;
+    margin: 40px 0;
+    padding-left: 30px;
+    border-left: 5px solid crimson;
+    transition: all .2s ease-in-out;
+}
+
+.blogs a :hover {
+    color: coral;
+}
+
+.details {
+    position: relative;
+}
+
+.delete {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 10px;
+    padding: 8px;
+}
+
+.delete:hover {
+    cursor: pointer;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+}
